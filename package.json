@@ -1,10 +1,11 @@
 {
   "name": "spaceapps2017",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A web application to compute cosmic radiation exposure",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

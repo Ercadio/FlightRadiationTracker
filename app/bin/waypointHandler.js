@@ -1,6 +1,6 @@
 var waypointList = [];
 var selection = -1;
-var counter = 1;
+var counter = 4;
 window.addEventListener('load', function() {
   const plus = document.getElementById('addPoint');
   const minus = document.getElementById('removePoint');
@@ -16,19 +16,24 @@ window.addEventListener('load', function() {
     container.appendChild(obj);
     appearify(obj);
     selection = obj.id;
-    document.getElementById('lat' + counter).addEventListener('click', function() {
-      selection = this.parentNode.id
+    document.getElementById('lat' + counter).addEventListener('keyup', function() {
+      selection = this.parentNode.id;
+      updateMap();
     });
-    document.getElementById('lon' + counter).addEventListener('click', function() {
-      selection = this.parentNode.id
+    document.getElementById('lon' + counter).addEventListener('keyup', function() {
+      selection = this.parentNode.id;
+      updateMap();
     });
-    document.getElementById('time' + counter).addEventListener('click', function() {
-      selection = this.parentNode.id
+    document.getElementById('time' + counter).addEventListener('keyup', function() {
+      selection = this.parentNode.id;
+      updateMap();
     });
-    document.getElementById('alt' + counter).addEventListener('click', function() {
-      selection = this.parentNode.id
+    document.getElementById('alt' + counter).addEventListener('keyup', function() {
+      selection = this.parentNode.id;
+      updateMap();
     });
     counter++;
+    updateMap();
   });
   minus.addEventListener('mousedown', function(event) {
     if(selection != -1){
@@ -37,6 +42,7 @@ window.addEventListener('load', function() {
       deletion.parentNode.removeChild(deletion);
       waypointList.splice(waypointList.indexOf(deletion),1);
       selection = -1;
+      updateMap();
     }
   });
 

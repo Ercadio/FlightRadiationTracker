@@ -50,6 +50,9 @@ html,body{
   margin-top:1vh;
 }
 iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
   margin-top:1vh;
   border: 0;
   width: 25vw;
@@ -74,7 +77,7 @@ iframe{
 .list{
   margin-top:1vh;
   width: 24vw;
-  height:40vh;
+  height:60vh;
   border-radius: 0.5vh;
   border: 0;
   font-size: 2vh;
@@ -84,11 +87,11 @@ iframe{
 }
 .text-field{
   margin-left: 0.5vw;
-  width:10.5vw;
+  width:7.5vw;
   position: absolute;
   border-radius: 0 0.5vh 0.5vh 0;
   border: 0;
-  height: 2.6vh;
+  height: 3vh;
   right: 0px;
   font-size: 2vh;
   font-variant: small-caps;
@@ -96,6 +99,8 @@ iframe{
   padding-left: 2vh;
   background-color: #2a3335;
   color: #b3d8cd;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .text-field:hover{
 }
@@ -107,7 +112,7 @@ iframe{
 }
 #waypointList-container-two{
   width: 24vw;
-  height: 37vh;
+  height: 58vh;
   margin-left: -1vw;
   border-radius: 0 0 0.5vh 0.5vh;
   border: 0;
@@ -162,7 +167,7 @@ iframe{
 .pointlist{
   width:25vw;
   height: 7vh;
-  border-bottom: 1px solid #4a5e63;
+  border-bottom: 0.5vh solid #4a5e63;
   margin-left: -1vw;
   padding-left: 1vw;
   padding-right: 1vw;
@@ -177,11 +182,11 @@ iframe{
   background-color: inherit;
   border: 0;
   margin-left: 1vw;
-  border-bottom: 1px solid #688e8a;
+  border-bottom: 0.25vh solid #688e8a;
   font-variant: small-caps;
 }
 .codename:focus{
-  border-bottom: 1px solid #8bbfb9;
+  border-bottom: 0.25vh solid #8bbfb9;
   outline:none;
 }
 .coor{
@@ -194,10 +199,12 @@ iframe{
   background-color: inherit;
   border: 0;
   margin-left: 1vw;
-  border-bottom: 1px solid #688e8a;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0.25vh solid #688e8a;
   font-variant: small-caps;
 }
 .coor:focus{
-  border-bottom: 1px solid #8bbfb9;
+  border-bottom: 0.25vh solid #8bbfb9;
   outline:none;
 }
