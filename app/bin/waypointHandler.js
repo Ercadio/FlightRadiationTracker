@@ -1,6 +1,6 @@
 var waypointList = [];
 var selection = -1;
-var counter = 4;
+var counter = 1;
 window.addEventListener('load', function() {
   const plus = document.getElementById('addPoint');
   const minus = document.getElementById('removePoint');
@@ -16,21 +16,66 @@ window.addEventListener('load', function() {
     container.appendChild(obj);
     appearify(obj);
     selection = obj.id;
+    // /\d/.test();
     document.getElementById('lat' + counter).addEventListener('keyup', function() {
       selection = this.parentNode.id;
+      if(isNaN(Number(this.value))){
+        this.style['border-bottom'] = '0.25vh solid #db7a7a';
+        this.style['color'] = '#db7a7a';
+      }
+      else{
+        this.style['border-bottom'] = '';
+        this.style['color'] = '';
+      }
       updateMap();
+    });
+    document.getElementById('lat' + counter).addEventListener('click', function() {
+      selection = this.parentNode.id;
     });
     document.getElementById('lon' + counter).addEventListener('keyup', function() {
       selection = this.parentNode.id;
+      if(isNaN(Number(this.value))){
+        this.style['border-bottom'] = '0.25vh solid #db7a7a';
+        this.style['color'] = '#db7a7a';
+      }
+      else{
+        this.style['border-bottom'] = '';
+        this.style['color'] = '';
+      }
       updateMap();
+    });
+    document.getElementById('lon' + counter).addEventListener('click', function() {
+      selection = this.parentNode.id;
     });
     document.getElementById('time' + counter).addEventListener('keyup', function() {
       selection = this.parentNode.id;
+      if(isNaN(Number(this.value))){
+        this.style['border-bottom'] = '0.25vh solid #db7a7a';
+        this.style['color'] = '#db7a7a';
+      }
+      else{
+        this.style['border-bottom'] = '';
+        this.style['color'] = '';
+      }
       updateMap();
+    });
+    document.getElementById('time' + counter).addEventListener('click', function() {
+      selection = this.parentNode.id;
     });
     document.getElementById('alt' + counter).addEventListener('keyup', function() {
       selection = this.parentNode.id;
+      if(isNaN(Number(this.value))){ // Error
+        this.style['border-bottom'] = '0.25vh solid #db7a7a';
+        this.style['color'] = '#db7a7a';
+      }
+      else{
+        this.style['border-bottom'] = '';
+        this.style['color'] = '';
+      }
       updateMap();
+    });
+    document.getElementById('alt' + counter).addEventListener('click', function() {
+      selection = this.parentNode.id;
     });
     counter++;
     updateMap();
@@ -45,5 +90,4 @@ window.addEventListener('load', function() {
       updateMap();
     }
   });
-
 });

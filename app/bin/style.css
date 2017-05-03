@@ -87,12 +87,14 @@ iframe{
 }
 .text-field{
   margin-left: 0.5vw;
-  width:7.5vw;
-  position: absolute;
+  width:7vw;
+  /*position: absolute;*/
   border-radius: 0 0.5vh 0.5vh 0;
   border: 0;
   height: 3vh;
-  right: 0px;
+  /*right: 0px;
+  top:0px;*/
+  float:right;
   font-size: 2vh;
   font-variant: small-caps;
   font-family: 'Arimo', sans-serif;
@@ -167,7 +169,7 @@ iframe{
 .pointlist{
   width:25vw;
   height: 7vh;
-  border-bottom: 0.5vh solid #4a5e63;
+  border-bottom: 0.25vh solid #4a5e63;
   margin-left: -1vw;
   padding-left: 1vw;
   padding-right: 1vw;

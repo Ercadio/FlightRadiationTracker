@@ -1,4 +1,4 @@
-var key = require('../apiKEYS.json');
+var key = require('apiKEYS.json');
 
 function init(https,express,app){
   app.use('/nasa',function(req,res){
