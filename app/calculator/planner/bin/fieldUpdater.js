@@ -18,7 +18,7 @@ window.addEventListener('keydown', function(e) {
     updateMap();
     if(fullField()){
       var radiationRequest = new XMLHttpRequest();
-      radiationRequest.open('GET',window.location.href + 'grad?' + getFormParam());
+      radiationRequest.open('GET','fleepy.space/grad?' + getFormParam());
       radiationRequest.onreadystatechange = function(){
         document.getElementById('tExpo').innerHTML = Number(radiationRequest.responseText).toFixed(5);
         document.getElementById('totalDuration').innerHTML = timeSum();
