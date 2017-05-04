@@ -18,7 +18,7 @@ window.addEventListener('keydown', function(e) {
     updateMap();
     if(fullField()){
       var radiationRequest = new XMLHttpRequest();
-      radiationRequest.open('GET','fleepy.space/grad?' + getFormParam());
+      radiationRequest.open('GET','//www.fleepy.space/grad?' + getFormParam());
       radiationRequest.onreadystatechange = function(){
         document.getElementById('tExpo').innerHTML = Number(radiationRequest.responseText).toFixed(5);
         document.getElementById('totalDuration').innerHTML = timeSum();
@@ -120,7 +120,7 @@ function timeSum(){
 
 function validateCode(code,callback){
   var codeRequest = new XMLHttpRequest();
-  codeRequest.open('GET','fleepy.space/aircode?code=' + code);
+  codeRequest.open('GET','//www.fleepy.space/aircode?code=' + code);
   codeRequest.onreadystatechange = function(){
     if(codeRequest.responseText != ''){
       callback(JSON.parse(codeRequest.responseText));
