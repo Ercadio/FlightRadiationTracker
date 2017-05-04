@@ -39,31 +39,31 @@
       <div class='container' id='container'>
         flight plan
         <div class='input' id='originCode-contain'>
-          origin code
+          origin icao
           <input type="text" id='originCode' class='text-field' />
         </div>
         <div class='input' id='destinationCode-contain'>
-          destination code
+          destination icao
           <input type="text" id='destinationCode' class='text-field' />
         </div>
         <div class='list' id='waypointList-container-one'>
           waypoints
           <div id='waypointList-container-two'>
             <div class='pointlist'>
-              code
+              icao
               <div class='codename' id='oricode'>
               </div><br />
-              uptime
+              risetime (min)
               <input class='coor' id='oritime' />
             </div>
             <div id='waypointList-container-three'>
-              <div class="pointlist" id="point0" style="display: inherit; opacity: 1;">lat<input type="text" class="coor" id="lat0">     lon<input type="text" class="coor" id="lon0"><br>uptime<input class="coor" id="time0">     alt<input type="text" class="coor" id="alt0"><br></div>
+              <div class="pointlist" id="point0" style="display: inherit; opacity: 1;">lat(deg)<input type="text" class="coor" id="lat0">     lon(deg)<input type="text" class="coor" id="lon0"><br>uptime(min)<input class="coor" id="time0">     alt(ft)<input type="text" class="coor" id="alt0"><br></div>
               </div>
               <div class='pointlist'>
-                code
+                icao
                 <div class='codename' id='descode'>
                 </div><br />
-                uptime
+                landtime (min)
                 <input class='coor' id='destime' />
               </div>
             </div></div>
@@ -72,10 +72,6 @@
                 </div>
                 <div id='removePoint'>
               </div></div>
-              <div class='input' id='total-distance'>
-                total distance (km)
-                <div type="text" id='tDist' class='text-field' ></div>
-              </div>
               <div class='input' id='total-exposure'>
                 total exposure (&#181;sv)
                 <div type="text" id='tExpo' class='text-field' ></div>
