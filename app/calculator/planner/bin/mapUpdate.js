@@ -3,9 +3,13 @@ function updateMap(){
     map = undefined;
     flightPath = undefined;
     initMap();
-    center.lat = 0;
-    center.lng = 0;
-    markers = [];
+    center.lat = (oridesPoints[0].lat + oridesPoints[1].lat) / 2;
+    center.lng = (oridesPoints[0].lng + oridesPoints[1].lng) / 2;;
+    markers = [new google.maps.Marker({
+      position: oridesPoints[0],
+      map: map,
+      label:"Origin"
+    })];
     var i = 0;
     waypointList.forEach(function(point){
       center.lat += Number(point.children[0].value);
@@ -21,10 +25,16 @@ function updateMap(){
         // }
       });
       markers.push(marker);
-      flightPath.getPath().insertAt(i++,new google.maps.LatLng(Number(point.children[0].value),Number(point.children[1].value)));
     });
     center.lat /= waypointList.length + 2;
     center.lon /= waypointList.length + 2;
+    markers.push(new google.maps.Marker({
+      position: oridesPoints[1],
+      map: map
+    }));
+    markers.forEach(function(pt){
+      flightPath.getPath().insertAt(i++,new google.maps.LatLng(pt.position.lat(),pt.position.lng()));
+    });
   }
 }
 

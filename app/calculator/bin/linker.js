@@ -1,6 +1,5 @@
 var files = [
-  'bin/textAnim.js',
-  'bin/url.js'
+
 ];
 
 files.forEach(function(elm){

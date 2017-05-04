@@ -4,7 +4,7 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const request = require('request');
-var PORT = process.env.PORT || 3000
+var PORT = 80;
 
 // const skywatchAPI = require('./bin/skywatchAPI');
 // skywatchAPI(https,express,app);
@@ -18,6 +18,11 @@ gMaps(express,app,request);
 const gRadiation = require('./bin/gRadiation');
 gRadiation(http,express,app);
 
+
+const codepoint = require('./bin/codepoint');
+codepoint(app);
+
+// fs.writeFile('./res/airport.json',txt.slice(0,-1) + ']');
 // const rRoute = require('./bin/rRoute');
 // rRoute(https,express,app);
 
