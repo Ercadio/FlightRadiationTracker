@@ -120,7 +120,7 @@ function timeSum(){
 
 function validateCode(code,callback){
   var codeRequest = new XMLHttpRequest();
-  codeRequest.open('GET',window.location.href + 'aircode?code=' + code);
+  codeRequest.open('GET',window.location.href + '/aircode?code=' + code);
   codeRequest.onreadystatechange = function(){
     if(codeRequest.responseText != ''){
       callback(JSON.parse(codeRequest.responseText));
