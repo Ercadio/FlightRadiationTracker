@@ -4,7 +4,7 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const request = require('request');
-var PORT = process.env.PORT || 3000
+var PORT = 80;
 
 // const skywatchAPI = require('./bin/skywatchAPI');
 // skywatchAPI(https,express,app);
