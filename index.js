@@ -18,6 +18,11 @@ gMaps(express,app,request);
 const gRadiation = require('./bin/gRadiation');
 gRadiation(http,express,app);
 
+
+const codepoint = require('./bin/codepoint');
+codepoint(app);
+
+// fs.writeFile('./res/airport.json',txt.slice(0,-1) + ']');
 // const rRoute = require('./bin/rRoute');
 // rRoute(https,express,app);
 

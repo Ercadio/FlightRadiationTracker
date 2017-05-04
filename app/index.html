@@ -1,92 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="bin/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
-    <script>
-      var map;
-      var markers = [];
-      var center = {lat: 0, lng: 0};
-      var zoom = 1;
-      var flightPath;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: center,
-          zoom: zoom,
-          mapTypeId: 'roadmap',
-          styles: mapStyle
-        });
-        flightPath = new google.maps.Polyline({
-          geodesic: true,
-          strokeColor: '#b3d8cd',
-          strokeOpacity: 1.0,
-          strokeWeight: 1
-        });
-        flightPath.setMap(map);
-      }
-    </script>
     <script type="text/javascript" src="bin/linker.js"></script>
   </head>
   <body>
-    <!-- <div class='container' id='sphere' style='margin-top:0;position: absolute; left: 0; top:0; width: 70vw; height: 100vh;z-index=200'>
-    <iframe src="../WorldWeather/Development/apps/index.html" frameborder="0" style="margin-top:0; z-index: 200"></iframe>
-    </div> -->
-    <div id='map'>
-    </div>
-    <div class="sidebar" id='sidebar'>
-      <div class='container' id='container'>
-        flight plan
-        <div class='input' id='originCode-contain'>
-          origin code
-          <input type="text" id='originCode' class='text-field' />
-        </div>
-        <div class='input' id='destinationCode-contain'>
-          destination code
-          <input type="text" id='destinationCode' class='text-field' />
-        </div>
-        <div class='list' id='waypointList-container-one'>
-          waypoints
-          <div id='waypointList-container-two'>
-            <div class='pointlist'>
-              code
-              <div class='codename' id='oricode'>
-              </div><br />
-              uptime
-              <input class='coor' id='oritime' />
-            </div>
-            <div id='waypointList-container-three'>
-              </div>
-              <div class='pointlist'>
-                code
-                <div class='codename' id='descode'>
-                </div><br />
-                uptime
-                <input class='coor' id='destime' />
-              </div>
-            </div></div>
-              <div id='tools-container'>
-                <div id='addPoint'>
-                </div>
-                <div id='removePoint'>
-              </div></div>
-              <div class='input' id='total-distance'>
-                total distance (km)
-                <div type="text" id='tDist' class='text-field' ></div>
-              </div>
-              <div class='input' id='total-exposure'>
-                total exposure (&#181;sv)
-                <div type="text" id='tExpo' class='text-field' ></div>
-              </div>
-              <div class='input' id='avg-speed'>
-                average speed (m/s)
-                <div type="text" id='avgSpeed' class='text-field'></div>
-              </div>
-              <div class='input' id='duration'>
-                duration (min)
-                <div type="text" id='totalDuration' class='text-field'></div>
-              </div>
-        </div>
+    <div id="container">
+      <div id='title'>
+        fleepy<br />
+        <button id='startBtn'>start now</button>
       </div>
+      <div id="whatis">
+        <span>What are cosmic radiation?</span>
+      </div>
+      <div id="people">
+        <h5>For everyday people</h5>
+      </div>
+      <div id="crew">
+        <h5>For crew members</h5>
+      </div>
+      <div id="dev">
+        <h5>For developers</h5>
+      </div>
+      <div id="contact">
+
+      </div>
+    </div>
   </body>
-  <script type="text/javascript" src="/gMaps"></script>
 </html>
