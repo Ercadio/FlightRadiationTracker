@@ -1,19 +1,20 @@
 var key = require('apiKEYS.json');
-
+var template = JSON.stringify(require('../res/template.json'));
 function init(https,express,app){
 
 // rRoute
 app.use('/flight',function(req,res){
-  const option3 = {
+  console.log(req.query.flightID);
+  const option = {
     'host':'api.flightplandatabase.com',
     'path':'/plan/' + req.query.flightID,
     'headers':{
-      'username': key['rRoute'],
+      'username': key['fpdb'],
       'Accept': 'application/json; charset=utf-8',
       'X-Units': 'SI'
     }
   };
-  https.request(option3,function(response){
+  https.request(option,function(response){
     var rspData = '';
 
     response.on('data',function(chunk){
@@ -22,36 +23,17 @@ app.use('/flight',function(req,res){
 
     response.on('end',function(){
 
-     console.log('Flight Plan ' + JSON.parse(rspData)['id']);
-
-      const data = JSON.parse(rspData);
-
-      if(data.message != '' || data.message != undefined){
-        console.log('api.flightplandatabase.com: ' + data.message,response.headers);
-
-        res.end('');
+      if(rspData != '' && rspData != undefined){
+        if(rspData === '{"message":"Too Many Requests","errors":null}'){
+          res.end(template);
+        }
+        else{
+          res.end(rspData);
+        }
       }
       else{
-        var route = '[';
-
-        for (var i = 0; i < JSON.parse(rspData)['waypoints']; i++)
-        {
-
-          var latitude = JSON.parse(rspData)['route']['nodes'][i]['lat'];
-          var longitude = JSON.parse(rspData)['route']['nodes'][i]['lon'];
-
-          route = route + '{' + '"lat": ' + latitude + ', "lon": ' + longitude + '}';
-          if (i < JSON.parse(rspData)['waypoints']-1)
-          {
-            route = route +',';
-          }
-
-        } // for
-
-        route = route + ']';
-        console.log('api.flightplandatabase.com: ' + route);
-        res.end(route);
-     }
+        res.end('');
+      }
     });
 
   }).end();

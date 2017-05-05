@@ -1,0 +1,74 @@
+{
+  "id": 62493,
+  "fromICAO": "CYYZ",
+  "toICAO": "UUWW",
+  "fromName": "Toronto Pearson International Airport",
+  "toName": "Domodedovo Moscow Airport",
+  "flightNumber": null,
+  "distance": 7767000,
+  "maxAltitude": 0,
+  "waypoints": 2,
+  "popularity": 0,
+  "notes": null,
+  "encodedPolyline": "yvh~Hgi`\\lggfAjyi~M",
+  "createdAt": "2015-08-05T22:44:34.000Z",
+  "updatedAt": "2015-08-05T22:44:34.000Z",
+  "tags": [
+    "atlantic"
+  ],
+  "user": {
+    "id": 1,
+    "username": "example",
+    "gravatarHash": "f30b58b998a11b5d417cc2c78df3f764",
+    "location": null
+  },
+  "route": {
+    "nodes": [
+      {
+        "type": "APT",
+        "ident": "CYYZ",
+        "name": "Toronto Pearson International Airport",
+        "lat": 43.6777176,
+        "lon": -79.6248197,
+        "alt": 0,
+        "via": null
+      },
+      {
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 61.08932427,
+        "lon": -94.12158286,
+        "alt": 10000,
+        "via": null
+      },
+      {
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 81.21213964,
+        "lon": -69.91256074,
+        "alt": 15000,
+        "via": null
+      },
+      {
+        "type": "LATLON",
+        "ident": "NONE",
+        "name": null,
+        "lat": 69.86700134,
+        "lon": 20.39812838,
+        "alt": 10000,
+        "via": null
+      },
+      {
+        "type": "APT",
+        "ident": "UUWW",
+        "name": "Domodedovo Moscow Airport",
+        "lat": 55.41030693,
+        "lon": 37.90244894,
+        "alt": 0,
+        "via": null
+      }
+    ]
+  }
+}

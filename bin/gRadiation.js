@@ -27,7 +27,11 @@ function init(http,express,app){
       });
       response.on('end',function(){
         var index = rspData.indexOf('millisieverts)');
-        res.end(String(1000*Number(rspData.slice(index - 8, index - 1))));
+        var rsp = String(1000*Number(rspData.slice(index - 8, index - 1)));
+        if(isNaN(rsp)){
+          rsp = '';
+        }
+        res.end(rsp);
       });
     });
     post_request.write(post_data);

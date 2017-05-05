@@ -1,5 +1,9 @@
 var files = [
-
+  'bin/mapUpdate.js',
+  'bin/waypointHandler.js',
+  'bin/mapStyle.js',
+  'bin/appearWindow.js',
+  'bin/fieldUpdater.js'
 ];
 
 files.forEach(function(elm){

@@ -1,6 +1,6 @@
 html,body{
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:100vw;
   margin: 0;
   overflow: hidden;
 }
@@ -25,26 +25,26 @@ div{
 #whatis{
   z-index: 4;
   position: absolute;
-  top: 60%;
+  top: 60vh;
   background-color: #505f63;
   font-size: 4vh;
   color:#c5dbdd;
 }
 #crew{
   position: absolute;
-  top: 120%;
+  top: 120vh;
   font-size: 4vh;
   background-color: #6f9ea5;
 }
 #dev{
   position: absolute;
-  top: 180%;
+  top: 180vh;
   font-size: 4vh;
   background-color: #8bafaf;
 }
 #contact{
   position: absolute;
-  top: 240%;
+  top: 240vh;
   background-color: #293235;
 }
 #container::-webkit-scrollbar {
@@ -69,12 +69,12 @@ div{
 #container{
   position: absolute;
   padding: 0;
-  width:100%;
-  height: 100%;
+  width:100vw;
+  height: 100vh;
   overflow-y: overlay;
 }
 #startBtn{
-  width: 15%;
+  width: 30%;
   height:10%;
   background-color: #546c72;
   border-radius: 0.5vh;
@@ -92,4 +92,30 @@ div{
 }
 #startBtn:focus{
   outline:none;
+}
+#logo{
+  background-image: url('../res/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5vw;
+  height: 5vw;
+}
+#left-tit{
+  padding: 0;
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+#right-tit{
+  padding: 0;
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+#clip{
+  width: 46.983vw;
+  height: 26.428vw;
+  margin-top:calc((60vh - 26.428vw - 6vw)/2);
+  border: 1px solid black;
+  box-sizing: border-box;
 }

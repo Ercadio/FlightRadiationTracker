@@ -1,0 +1,73 @@
+html,body{
+  height:100%;
+  width:100%;
+  margin: 0;
+  background-color: #191e1e;
+  font-family: 'Arimo', sans-serif;
+  color: #b3d8cd;
+  font-size: 1.5vw;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+#container{
+  height:100vh;
+  width: 80vw;
+  margin-left: 10vw;
+}
+.text-field{
+  margin-left: 0.5vw;
+  width:10vw;
+  /*position: absolute;*/
+  border-radius: 0 0.5vh 0.5vh 0;
+  border: 0;
+  height: 3vh;
+  /*right: 0px;
+  top:0px;*/
+  float:right;
+  font-size: 2vh;
+  font-variant: small-caps;
+  font-family: 'Arimo', sans-serif;
+  padding-left: 2vh;
+  background-color: #2a3335;
+  color: #b3d8cd;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.text-field:hover{
+}
+.text-field:active{
+  outline:none;
+}
+.text-field:focus{
+  outline:none;
+}
+.input{
+  margin-top:1vh;
+  width: 34vw;
+  height:3vh;
+  border-radius: 0.5vh;
+  border: 0;
+  font-size: 2vh;
+  background-color: #4a5e63;
+  line-height: 3vh;
+  padding-left: 1vw;
+}
+#flights{
+  margin-top: 3vh;
+}
+#adder{
+  margin-top: 3vh;
+}
+#exposure{
+  margin-top: 3vh;
+}
+.link{
+  cursor: pointer;
+  font-size: 2vh;
+}
+.link:hover{
+  text-decoration: underline;
+}

@@ -12,6 +12,9 @@ var PORT = 80;
 // const nasaAPI = require('./bin/nasaAPI');
 // nasaAPI(https,express,app);
 
+// const createKey = require('./bin/createKey');
+// createKey();
+
 const gMaps = require('./bin/gMaps');
 gMaps(express,app,request);
 
@@ -26,8 +29,8 @@ codepoint(app);
 // const rRoute = require('./bin/rRoute');
 // rRoute(https,express,app);
 
-// const flightplan = require('./bin/flightplan');
-// flightplan(https,express,app);
+const flightplan = require('./bin/flightplan');
+flightplan(https,express,app);
 
 app.use(express.static('./app'));
 // app.use('/WorldWeather',express.static('./WorldWeather'));

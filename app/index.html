@@ -2,24 +2,42 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="bin/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <script type="text/javascript" src="bin/linker.js"></script>
+    <link rel="stylesheet" type="text/css" href="bin/style.css" />
+    <title>fleepy</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/res/logo.png">
   </head>
   <body>
     <div id="container">
       <div id='title'>
-        fleepy<br />
-        <button id='startBtn'>start now</button>
+        <div id="left-tit">
+          <div id="logo"></div>
+          fleepy<br />
+          <button id='startBtn'>start now</button>
+        </div>
+        <div id="right-tit">
+          <canvas id="clip" width="1920" height="1080"></canvas>
+        </div>
       </div>
       <div id="whatis">
-        <span>What are cosmic radiation?</span>
-      </div>
-      <div id="people">
-        <h5>For everyday people</h5>
+        <span>What are cosmic radiations?</span>
+        <p style="font-size:2.3vh;text-align:justify">
+          Ionizing radiation refers to subatomic particles of matter (e.g., neutrons, protons, and electrons) and massless particles of energy (X-rays and gamma rays), with each particle having sufficient energy so that, on interacting with a material, it can cause an atom to lose an orbital electron. Low levels of ionizing radiation are a normal part of our environment. Substances that emit ionizing radiation are present in every cell in the body.
+<br /><br />
+	Some existing sources of ionizing radiation are:
+<br /><br />
+	<strong>Galactic Cosmic Radiation.</strong> <br /> The ionizing radiation that originates outside the solar system, a main source of which is thought to be exploding stars (supernovae);
+<br /><br />
+  <strong>Solar Cosmic Radiation.</strong><br /> Ionizing radiation that originates from the Sun; the particles interact with air atoms in the same way as galactic cosmic radiation.  Solar particle events, also sometimes called solar flares, will result in temporary increases in solar cosmic radiation levels, usually very small relative to the background rate from galactic cosmic radiation.  On rare occasions it can be significantly greater than the galactic cosmic radiation dose rate.  On rare occasions, a severe disturbance in the Sun will lead to a large increase in the amount of solar cosmic radiation that penetrates Earth's magnetic field and enters the atmosphere, increasing the dose rate of ionizing radiation to air travelers.  The period and amount of increase at any given time are difficult to predict accurately and may last from a few minutes to more than a day. The increase is greatest near the magnetic poles, where the Earth's magnetic field provides the least shielding, and decreases rapidly as latitude decreases toward the geomagnetic equator.
+        </p>
       </div>
       <div id="crew">
-        <h5>For crew members</h5>
+        <h5>For air travellers</h5>
+        <p style="font-size:2.3vh;text-align:justify">
+          Exposures to ionizing radiation represent real health hazards to all air travellers.  Prolonged ionizing radiation exposures may lead to biological effects such as: damage of immunization system, cancer, and hereditary effects.  To reduce the risks of these biological effects, air travellers should monitor their radiation exposure and compare against the recommended exposure limit.
+	The recommended occupational exposure limit for ionizing radiation is a 5-year average effective dose of 20 mSv per year, with no more than 50 mSv in a single year.
+        </p>
       </div>
       <div id="dev">
         <h5>For developers</h5>

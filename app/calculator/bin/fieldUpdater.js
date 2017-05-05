@@ -1,3 +1,6 @@
+const averageSpeed = 250;
+
+
 window.addEventListener('load', function() {
   const oriedit = document.getElementById('originCode');
   const oricode = document.getElementById('oricode');
@@ -10,6 +13,77 @@ window.addEventListener('load', function() {
   desedit.addEventListener('keyup', function() {
     descode.innerHTML = desedit.value;
     updateMap();
+  });
+
+  const flightID = document.getElementById('flightID');
+  flightID.addEventListener('keyup', function() {
+    if(isNaN(Number(this.value))){
+      this.style['border-left'] = '0.25vh solid #db7a7a';
+      this.style['color'] = '#db7a7a';
+    }
+    else if(this.value != ''){
+      this.style['border-left'] = '';
+      this.style['color'] = '';
+      var routeRequest = new XMLHttpRequest();
+      routeRequest.open('GET','../../flight?flightID=' + this.value);
+      routeRequest.onreadystatechange = function(){
+        if(routeRequest.responseText != ''){
+          const route = JSON.parse(routeRequest.responseText);
+          const totalTime = route.distance / averageSpeed / 60;
+          if(route.fromICAO){
+            document.getElementById('waypointList-container-three').innerHTML = '';
+            waypointList = [];
+            document.getElementById('originCode').value = route.fromICAO;
+            document.getElementById('destinationCode').value = route.toICAO;
+            document.getElementById('oricode').innerHTML = route.fromICAO;
+            document.getElementById('descode').innerHTML = route.toICAO;
+            document.getElementById('oritime').value = totalTime * 0.02;
+            document.getElementById('destime').value = totalTime * 0.02;
+            const list = route.route.nodes;
+            var index = Math.floor((list.length - 20)/2);
+            if(index < 1) index = 1;
+            document.getElementById('lat0').value = list[index].lat;
+            document.getElementById('lon0').value = list[index].lon;
+            document.getElementById('alt0').value = list[index].alt;
+            const len = list.length - 2;
+            if(len > 20) len = 20;
+            document.getElementById('time0').value = totalTime * 0.96 / len;
+            for(var i = index + 1; i < index + len; i++){
+              var ul = addWay();
+              document.getElementById('lat' + ul).value = list[i].lat;
+              document.getElementById('lon' + ul).value = list[i].lon;
+              document.getElementById('alt' + ul).value = list[i].alt;
+              document.getElementById('time' + ul).value = totalTime * 0.96 / len;
+            }
+            validateCode(route.fromICAO,function(res){
+                document.getElementById('originCode').style['border-left'] = '';
+                document.getElementById('originCode').style['color'] = '';
+                oridesPoints[0] = {'lat':Number(res.lat),'lng':Number(res.lon)};
+            });
+            validateCode(route.toICAO,function(res){
+                document.getElementById('destinationCode').style['border-left'] = '';
+                document.getElementById('destinationCode').style['color'] = '';
+                oridesPoints[1] = {'lat':Number(res.lat),'lng':Number(res.lon)};
+            });
+            var midpoints = document.getElementById('waypointList-container-three').children;
+            for(var child in midpoints){
+              waypointList.push(child);
+            }
+            if(fullField()){
+              var radiationRequest = new XMLHttpRequest();
+              radiationRequest.open('GET','../../grad?' + getFormParam());
+              radiationRequest.onreadystatechange = function(){
+                document.getElementById('tExpo').innerHTML = Number(radiationRequest.responseText).toFixed(5);
+                document.getElementById('totalDuration').innerHTML = timeSum();
+              }
+              radiationRequest.send();
+            }
+            updateMap();
+          }
+        }
+      }
+      routeRequest.send();
+    }
   });
 });
 
