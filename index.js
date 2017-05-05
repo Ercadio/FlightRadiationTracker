@@ -25,6 +25,9 @@ gRadiation(http,express,app);
 const codepoint = require('./bin/codepoint');
 codepoint(app);
 
+const warm = require('./bin/warm');
+warm(app,request);
+
 // fs.writeFile('./res/airport.json',txt.slice(0,-1) + ']');
 // const rRoute = require('./bin/rRoute');
 // rRoute(https,express,app);

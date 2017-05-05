@@ -171,6 +171,7 @@ function getFormParam(){
   var fields = 'DateOfFlight=' + '00%2F2017' + '&Ocode=' + String(document.getElementById('originCode').value) + '&DCode=' + String(document.getElementById('destinationCode').value) + '&NumOfSteps=' + String(waypointList.length) + '&ClimbTime=' + String(document.getElementById('oritime').value) + '&MinDown=' + String(document.getElementById('destime').value);
   var i = 1;
   waypointList.forEach(function(elm){
+    console.log(elm.children);
     fields += '&StepAlt_' + String(i) + '=' + String(elm.children[4].value);
     fields += '&StepMin_' + String(i) + '=' + String(elm.children[3].value);
     i++;
