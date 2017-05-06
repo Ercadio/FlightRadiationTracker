@@ -39,8 +39,61 @@
 	The recommended occupational exposure limit for ionizing radiation is a 5-year average effective dose of 20 mSv per year, with no more than 50 mSv in a single year.
         </p>
       </div>
-      <div id="dev">
+      <div id="dev" style="overflow-y:scroll">
         <h5>For developers</h5>
+        <p style="font-size:2.3vh;text-align:justify">
+	The Web-based Application Radiation Management (WARM) API is provided for users and developers to build and link applications to our calculation of inflight radiation exposure dosage. This page documents each of the available endpoints, the parameters expected and the structure of the responses. At this point in time, the endpoints of the API are publicly available without authentication.
+
+<br /><br /><strong>1.  Calculate Radiation Exposure for an Existing Flight</strong><br />
+<br />
+	Purpose.  Calculates the total radiation exposure dosage for a flight, given a flight number.
+<br /><br />
+	GET http://fleepy.space/warm?FlightID=Number
+<br /><br />
+	Parameters. (Name; Type; Required (Y/N); Default; Description)
+<br /><br />
+	* FlightID;	Number; Y; None; The flight number of the flight the air traveller.  In this demonstration, it is a unique identifier for an existing flight plan.
+<br /><br />
+	Response. (Name; Type; Description)
+<br />	<br />
+	* Dosage; Number; Radiation exposure dosage in microsieverts (&#181;sv).
+<br /><br />
+<strong>2.  Calculate Radiation Exposure for a Custom Flight Plan</strong><br />
+<br />
+	Purpose.  Calculates the total radiation exposure dosage for a flight, given a custom flight plan.
+<br /><br />
+	GET http://fleepy.space/grad?{CustomFlightPlan}
+<br /><br />
+	Parameters. (Name; Type; Required (Y/N); Default; Description)
+<br /><br />
+	* CustomFlightPlan; Query string; Y; None; A string that captures the data structure of a custom flight plan as follows:
+<br /><br />
+	"DateOfFlight=00%2F4DigitYear&OCode=OriginICAOCode&DCode=DestinationICAOCode&NumOfSteps=NumberInteger
+<br />&ClimbTime=DurationInMinute&MinDown=DurationInMinute&btnSubmit=Continue&StepAlt_1=AltitudeInFeet&StepMin_1=DurationInMinute&
+<br />... StepAlt_K=AltitudeInFeet&StepMin_K=DurationInMinute"
+<br /><br />
+	Response. (Name; Type; Description)
+<br/><br />
+	* Dosage; Number; Radiation exposure dosage in microsieverts (&#181;sv).
+<br/><br />
+<strong>3.  Obtain 2D Location from an International Civil Aviation Organization (ICAO) Code</strong> <br />
+<br />
+	Purpose.  Obtains the geographical location in terms of Latitude and Longitude for a given ICAO code.
+<br /><br />
+	GET http://fleepy.space/aircode?code=ICAOCode
+<br /><br />
+	Parameters. (Name; Type; Required (Y/N); Default; Description)
+<br /><br />
+	* ICAOCode; String; Y; None; A four-character alphanumeric code designating aerodromes around the world. These codes are defined by the International Civil Aviation Organization.
+<br /><br />
+	Response. (Name; Type; Description)
+<br /><br />
+	* N/A; JSON string; Conditional.
+<br /><br />
+	If nothing found, returns this string: "{isValid: False}";
+<br />	Else, returns this string: "{isValid: True, lat: X, lon: Y}".
+        </p>
+
       </div>
       <div id="contact">
 
