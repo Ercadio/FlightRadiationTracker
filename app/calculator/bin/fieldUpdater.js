@@ -71,7 +71,7 @@ window.addEventListener('load', function() {
               radiationRequest.open('GET','../../grad?' + getFormParam());
               radiationRequest.onreadystatechange = function(){
                 document.getElementById('tExpo').innerHTML = Number(radiationRequest.responseText).toFixed(5);
-                document.getElementById('totalDuration').innerHTML = timeSum();
+                document.getElementById('totalDuration').innerHTML = timeSum().toFixed(5);
               }
               radiationRequest.send();
             }
