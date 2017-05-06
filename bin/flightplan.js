@@ -4,7 +4,6 @@ function init(https,express,app){
 
 // rRoute
 app.use('/flight',function(req,res){
-  console.log(req.query.flightID);
   const option = {
     'host':'api.flightplandatabase.com',
     'path':'/plan/' + req.query.flightID,

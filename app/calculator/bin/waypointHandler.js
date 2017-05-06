@@ -36,6 +36,7 @@ function addWay(){
     obj.style.display = 'none';
     obj.innerHTML = 'lat<input type=\'text\' class=\'coor\' id=\'lat' + counter + '\'/>&deg;              lon<input type=\'text\' class=\'coor\' id=\'lon' + counter + '\'/>‌&deg;<br\>uptime (min)<input class=\'coor\' id=\'time' + counter + '\'/>     alt (ft)<input type=\'text\' class=\'coor\' id=\'alt' + counter + '\'/><br\>';
     obj.id = 'point' + counter;
+    console.log(obj);
     waypointList.push(obj);
     container.appendChild(obj);
     appearify(obj);
