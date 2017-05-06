@@ -40,7 +40,7 @@ window.addEventListener('load', function() {
             document.getElementById('oritime').value = totalTime * 0.02;
             document.getElementById('destime').value = totalTime * 0.02;
             const list = route.route.nodes;
-            var index = Math.floor((list.length - 20)/2);
+            var index = Math.floor((list.length - 22)/2) + 1;
             if(index < 1) index = 1;
             document.getElementById('lat0').value = list[index].lat;
             document.getElementById('lon0').value = list[index].lon;
@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
             const len = list.length - 2;
             if(len > 20) len = 20;
             document.getElementById('time0').value = totalTime * 0.96 / len;
-            for(var i = index + 1; i < index + len; i++){
+            for(var i = index; i < index + len; i++){
               var ul = addWay();
               document.getElementById('lat' + ul).value = list[i].lat;
               document.getElementById('lon' + ul).value = list[i].lon;
@@ -66,9 +66,6 @@ window.addEventListener('load', function() {
                 oridesPoints[1] = {'lat':Number(res.lat),'lng':Number(res.lon)};
             });
             var midpoints = document.getElementById('waypointList-container-three').children;
-            for(var child in midpoints){
-              waypointList.push(child);
-            }
             if(fullField()){
               var radiationRequest = new XMLHttpRequest();
               radiationRequest.open('GET','../../grad?' + getFormParam());
@@ -171,7 +168,6 @@ function getFormParam(){
   var fields = 'DateOfFlight=' + '00%2F2017' + '&Ocode=' + String(document.getElementById('originCode').value) + '&DCode=' + String(document.getElementById('destinationCode').value) + '&NumOfSteps=' + String(waypointList.length) + '&ClimbTime=' + String(document.getElementById('oritime').value) + '&MinDown=' + String(document.getElementById('destime').value);
   var i = 1;
   waypointList.forEach(function(elm){
-    console.log(elm.children);
     fields += '&StepAlt_' + String(i) + '=' + String(elm.children[4].value);
     fields += '&StepMin_' + String(i) + '=' + String(elm.children[3].value);
     i++;
