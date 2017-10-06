@@ -5,7 +5,7 @@
   "description": "A web application to compute cosmic radiation exposure",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js && start http://localhost"
   },
   "repository": {
     "type": "git",
